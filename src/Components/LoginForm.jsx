@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const LoginForm = (props) => {
     const setIsLoggedIn = props.setIsLoggedIn;
-
+    // Initialize useNavigate hook
     const navigate = useNavigate();
 
     const [showPassword, setShowPassword] = useState(false);
