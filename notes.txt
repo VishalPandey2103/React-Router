@@ -1,0 +1,14 @@
+Why App needs to be wrap inside the BrowserRouter
+    When you use React Router, it needs a "navigator brain" to keep track of the current URL and update your components when the URL changes.
+    <BrowserRouter> is that brain.
+    It listens to the browser’s address bar.
+    It decides which component to show based on the URL.
+    Without it, <Route> or <Link> won’t work because there’s no system to handle navigation.
+    So, wrapping <App /> inside <BrowserRouter> is like giving your app a GPS — now it knows where it is and where to go when links are clicked.
+
+Why toaster Placed in render wale component
+    <Toaster /> is usually a global component from a library like react-hot-toast.
+    If you put it inside a page component, it would disappear when you change routes (because that component gets unmounted).
+    By placing it inside <BrowserRouter> but outside <App />’s routing, it:
+    Still has access to React Router’s context (if needed).
+    Always stays mounted while you navigate around.
